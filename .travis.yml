@@ -1,6 +1,11 @@
 language: c
 compiler: clang
 sudo: false
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y install gdb
+
 script:
   - ./autogen.sh
   - ./configure --prefix=$HOME/local --enable-debug
