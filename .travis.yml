@@ -1,0 +1,9 @@
+language: c
+compiler: clang
+sudo: false
+script:
+  - ./autogen.sh
+  - ./configure --prefix=$HOME/local --enable-debug
+  - make dist
+  - make install
+  - make regtest
